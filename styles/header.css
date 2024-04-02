@@ -1,0 +1,92 @@
+/* استایل دهی که استاد زد */
+/* NAVAR */
+.header{
+    background-color: var(--color-navbar);
+}
+
+.nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 1rem 2rem;
+}
+
+.nav a{
+    width: 102px;
+}
+
+.nav a img{
+    width: 100%;
+}
+
+.nav__list{
+    width: 100%;
+    /* 100برای اینکه لیست ها بره پایین  */
+    display: flex;
+    flex-direction: column;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.3s linear;
+}
+.nav__item{
+    margin-bottom: 1.7rem;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 1rem;
+}
+
+.nav__list:last-child{
+    display: none;
+
+}
+
+.nav__item a{
+    color: #444;
+    text-decoration: none;
+    display: block;  
+    /*  دیس پلی بلاک میدیم کل عرض را میگیرد */
+}
+
+.nav__item a:hover{
+    color: var(--color-primary);
+}
+
+.nav.expand .nav__list{
+    max-height: 100vh;
+    opacity: 1;
+}
+
+@media screen and (min-width:768px){
+.nav__toggler{
+    display: none;
+}
+
+.nav__list{
+    flex-direction: row;
+    width: auto;
+    opacity: 1;
+    max-height: 100px;
+    transition: all 0s;
+}
+
+.nav__item{
+    margin-left: 3rem;
+    border: none;
+    display: flex;
+    align-items: center;
+}
+
+.nav__list:last-child{
+    display:block;
+
+}
+.nav__list:last-child a{
+    padding:1rem 2rem ;
+
+}
+
+
+}
+    
+
